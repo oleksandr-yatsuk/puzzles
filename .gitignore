@@ -1,0 +1,45 @@
+# Windows
+Thumbs.db
+
+# Visual Studio
+*.obj
+*.exe
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+[Tt]est[Rr]esult*
+*.tmp
+*.chw
+*.dotCover
+*.debug.css
+_ReSharper*
+
+# Ignore certain folders
+.idea
+.vs
+node_modules
+Output/
+/Packages/
+/Packages/!Repositories.config
+
+# nuspec files
+!Deployment/Packages/**
+
+

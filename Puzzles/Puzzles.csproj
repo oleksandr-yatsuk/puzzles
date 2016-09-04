@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0D615D4-C579-4750-872C-16CB72E1A7D6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Puzzles</RootNamespace>
+    <AssemblyName>Puzzles</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exercises\BitManipulation\XorSequence\XorSequence.cs" />
+    <Compile Include="Exercises\DublicatesInArray\ArrayWithDublicates.cs" />
+    <Compile Include="Exercises\MatrixLayerRotation\Matrix.cs" />
+    <Compile Include="Exercises\MatrixLayerRotation\MatrixCellCoordinates.cs" />
+    <Compile Include="Exercises\MatrixLayerRotation\MatrixLayerArray.cs" />
+    <Compile Include="Exercises\MatrixLayerRotation\MatrixLayerArrayIndex.cs" />
+    <Compile Include="Exercises\MatrixLayerRotation\MatrixLayerArrayShifter.cs" />
+    <Compile Include="Exercises\MongeArrays\MongeArray.cs" />
+    <Compile Include="Exercises\Probability\LazySorting\Logan.cs" />
+    <Compile Include="Exercises\Probability\Palindrome\Swapper.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\Captain.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\Cube.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\FileWriter.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\TestCaseWriter.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\TestCasesGenerator.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\TestCaseReader.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\TestCase.cs" />
+    <Compile Include="Exercises\SafestPlaceInTheGalaxy\Point.cs" />
+    <Compile Include="Exercises\Shuffling\Shifter.cs" />
+    <Compile Include="Exercises\Shuffling\Shuffle.cs" />
+    <Compile Include="Exercises\Probability\BirthdayGift\PhoneBuyer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Exercises\AddingThisAddingThat\AddResult.cs" />
+    <Compile Include="Exercises\AddingThisAddingThat\Caluclator.cs" />
+    <Compile Include="Exercises\RunUpTheStairs\Runner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
