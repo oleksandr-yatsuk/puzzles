@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Angle.cs" />
     <Compile Include="Exercises\BitManipulation\XorSequence\XorSequence.cs" />
     <Compile Include="Exercises\DublicatesInArray\ArrayWithDublicates.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\Matrix.cs" />
@@ -51,7 +52,20 @@
     <Compile Include="Exercises\MatrixLayerRotation\MatrixLayerArrayShifter.cs" />
     <Compile Include="Exercises\MongeArrays\MongeArray.cs" />
     <Compile Include="Exercises\Probability\LazySorting\Logan.cs" />
-    <Compile Include="Exercises\Probability\Palindrome\Swapper.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\AlphabetOld.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\Alphabet.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\BinomialCoefficient.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\CompositeIndexes.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\Factorial.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\LettersSet.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\Matrix.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\PalindromeEquations.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\RootsType.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\RoundedNumber.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\SimpleGaussianElimination.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\SystemOfEquations.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\Word.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\WordComparer.cs" />
     <Compile Include="Exercises\SafestPlaceInTheGalaxy\Captain.cs" />
     <Compile Include="Exercises\SafestPlaceInTheGalaxy\Cube.cs" />
     <Compile Include="Exercises\SafestPlaceInTheGalaxy\FileWriter.cs" />
@@ -63,16 +77,25 @@
     <Compile Include="Exercises\Shuffling\Shifter.cs" />
     <Compile Include="Exercises\Shuffling\Shuffle.cs" />
     <Compile Include="Exercises\Probability\BirthdayGift\PhoneBuyer.cs" />
+    <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\ExpectedValueResolver.cs" />
+    <Compile Include="HackonacciCell.cs" />
+    <Compile Include="HackonacciNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exercises\AddingThisAddingThat\AddResult.cs" />
     <Compile Include="Exercises\AddingThisAddingThat\Caluclator.cs" />
     <Compile Include="Exercises\RunUpTheStairs\Runner.cs" />
+    <Compile Include="RotatedIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Puzzles.Common\Puzzles.Common.csproj">
+      <Project>{B6EE4786-B0F9-4157-91DF-A6ADD7776D49}</Project>
+      <Name>Puzzles.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
