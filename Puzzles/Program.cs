@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Puzzles.Common.Extensions;
+using Puzzles.Exercises.Hackonacci;
 using Puzzles.Exercises.Probability.Palindromes.ExpectedValue;
 
 namespace Puzzles
@@ -27,59 +29,18 @@ namespace Puzzles
                 Console.WriteLine(swaps.ToString("F4"));
             }*/
 
-            var n = 2000;
-            var q = 3;
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
 
-            var angles = new int[]
-            {
-                0, 90, 180, 270
-            };
+            var matrix = new HackonacciMatrix(2000);
 
-            var symbolsInCells = new Dictionary<HackonacciCell, char>();
+            Console.WriteLine(matrix.GetNumberOfDifferences(90));
+            Console.WriteLine(matrix.GetNumberOfDifferences(180));
+            Console.WriteLine(matrix.GetNumberOfDifferences(270));
 
-            for (var i = 1; i <= n; i++)
-            {
-                for (var j = i; j <= n; j++)
-                {
-                    var cell = new HackonacciCell(i, j);
+            stopWatch.Stop();
 
-                    if(!symbolsInCells.ContainsKey(cell))
-                        symbolsInCells.Add(cell, cell.Symbol);
-                }
-            }
-
-            var differences = new Dictionary<int, long>();
-
-            for (var a = 0; a < angles.Length; a++)
-            {
-                var angle = new Angle(angles[a]);
-                var difference = 0;
-
-                if (angle.IsRotationNeeded)
-                {
-                    for (var i = 1; i <= n; i++)
-                    {
-                        for (var j = 1; j <= n; j++)
-                        {
-                            var rotationIndex = new RotatedIndex(i, j, n);
-
-                            for (var k = 1; k < angle.Rotations; k++)
-                            {
-                                rotationIndex = new RotatedIndex(rotationIndex, n);
-                            }
-
-                            var originalCell = new HackonacciCell(i, j);
-                            var rotatedCell = new HackonacciCell(rotationIndex.I, rotationIndex.J);
-
-                            if (symbolsInCells[originalCell] != symbolsInCells[rotatedCell])
-                                difference++;
-                        }
-                    }
-                }
-                differences.AddIfNotExists(angles[a], difference);
-
-                Console.WriteLine(angles[a]);
-            }
+            Console.WriteLine(stopWatch.ElapsedMilliseconds);
 
             Console.ReadKey();
         }

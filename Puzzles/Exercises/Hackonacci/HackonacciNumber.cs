@@ -1,4 +1,4 @@
-﻿namespace Puzzles
+﻿namespace Puzzles.Exercises.Hackonacci
 {
     public struct HackonacciNumber
     {
@@ -8,7 +8,6 @@
         }
 
         public long Value { get; }
-        public char Symbol => (Value & 1) == 0 ? 'X' : 'Y';
 
         static long CalculateValue(int number)
         {
@@ -19,7 +18,7 @@
 
             for (var i = 0; i < number - 3; i++)
             {
-                d = a + 2 * b + 3 * c;
+                d = 3*a + 2*b + c;
                 a = b;
                 b = c;
                 c = d;

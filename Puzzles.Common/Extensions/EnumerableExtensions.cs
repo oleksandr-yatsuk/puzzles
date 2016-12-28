@@ -47,5 +47,14 @@ namespace Puzzles.Common.Extensions
 
             return dictionary;
         }
+
+        public static IDictionary<TKey, TValue> ToDictionary<TItems, TKey, TValue>(this IEnumerable<TItems> items, Func<TItems, TKey> key, Func<TItems, TValue> value)
+        {
+            var dictionary = new Dictionary<TKey, TValue>();
+
+            items.ForEach(item => dictionary.Add(key(item), value(item)));
+
+            return dictionary;
+        }
     }
 }

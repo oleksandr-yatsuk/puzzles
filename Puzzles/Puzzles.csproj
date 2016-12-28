@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Angle.cs" />
+    <Compile Include="Exercises\Hackonacci\Angle.cs" />
     <Compile Include="Exercises\BitManipulation\XorSequence\XorSequence.cs" />
     <Compile Include="Exercises\DublicatesInArray\ArrayWithDublicates.cs" />
+    <Compile Include="Exercises\Hackonacci\HackonacciMatrix.cs" />
+    <Compile Include="Exercises\Hackonacci\RotationDifference.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\Matrix.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\MatrixCellCoordinates.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\MatrixLayerArray.cs" />
@@ -78,14 +80,14 @@
     <Compile Include="Exercises\Shuffling\Shuffle.cs" />
     <Compile Include="Exercises\Probability\BirthdayGift\PhoneBuyer.cs" />
     <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\ExpectedValueResolver.cs" />
-    <Compile Include="HackonacciCell.cs" />
-    <Compile Include="HackonacciNumber.cs" />
+    <Compile Include="Exercises\Hackonacci\HackonacciCell.cs" />
+    <Compile Include="Exercises\Hackonacci\HackonacciNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exercises\AddingThisAddingThat\AddResult.cs" />
     <Compile Include="Exercises\AddingThisAddingThat\Caluclator.cs" />
     <Compile Include="Exercises\RunUpTheStairs\Runner.cs" />
-    <Compile Include="RotatedIndex.cs" />
+    <Compile Include="Exercises\Hackonacci\RotatedIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
