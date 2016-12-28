@@ -2,9 +2,9 @@
 
 namespace Puzzles.Exercises.Hackonacci
 {
-    public struct RotatedIndex
+    public struct RotatedCell
     {
-        public RotatedIndex(Angle angle, int i, int j, int n)
+        public RotatedCell(Angle angle, int i, int j, int n)
         {
             var rowAndColumn = CalculateRowAndColumn(angle, i, j, n);
 

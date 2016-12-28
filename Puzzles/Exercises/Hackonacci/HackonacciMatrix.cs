@@ -58,7 +58,7 @@ namespace Puzzles.Exercises.Hackonacci
 
             foreach (var difference in differences)
             {
-                var rotatedCell = new HackonacciCell(new RotatedIndex(difference.Angle, i, i, n));
+                var rotatedCell = new HackonacciCell(new RotatedCell(difference.Angle, i, i, n));
 
                 difference.Add(cell.Symbol ^ rotatedCell.Symbol);
             }
@@ -70,8 +70,8 @@ namespace Puzzles.Exercises.Hackonacci
 
             foreach (var difference in differences)
             {
-                var rotatedCell = new HackonacciCell(new RotatedIndex(difference.Angle, cell.Row, cell.Column, n));
-                var rotatedOppositeCell = new HackonacciCell(new RotatedIndex(difference.Angle, cell.Column, cell.Row, n));
+                var rotatedCell = new HackonacciCell(new RotatedCell(difference.Angle, cell.Row, cell.Column, n));
+                var rotatedOppositeCell = new HackonacciCell(new RotatedCell(difference.Angle, cell.Column, cell.Row, n));
 
                 difference.Add((cell.Symbol ^ rotatedCell.Symbol) + (cell.Symbol ^ rotatedOppositeCell.Symbol));
             }

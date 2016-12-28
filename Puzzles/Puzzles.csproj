@@ -87,7 +87,7 @@
     <Compile Include="Exercises\AddingThisAddingThat\AddResult.cs" />
     <Compile Include="Exercises\AddingThisAddingThat\Caluclator.cs" />
     <Compile Include="Exercises\RunUpTheStairs\Runner.cs" />
-    <Compile Include="Exercises\Hackonacci\RotatedIndex.cs" />
+    <Compile Include="Exercises\Hackonacci\RotatedCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

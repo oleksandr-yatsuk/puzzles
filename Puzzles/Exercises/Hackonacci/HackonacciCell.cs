@@ -6,13 +6,13 @@ namespace Puzzles.Exercises.Hackonacci
     {
         static readonly IDictionary<long, int> Values = new Dictionary<long, int>
         {
-            {0, 1},
             {1, (int)new HackonacciNumber(1).Value & 1},
             {2, (int)new HackonacciNumber(2).Value & 1},
             {3, (int)new HackonacciNumber(3).Value & 1},
             {4, (int)new HackonacciNumber(4).Value & 1},
             {5, (int)new HackonacciNumber(5).Value & 1},
             {6, (int)new HackonacciNumber(6).Value & 1},
+            {0, (int)new HackonacciNumber(7).Value & 1}
         };
 
         public HackonacciCell(int row, int column)
@@ -23,7 +23,7 @@ namespace Puzzles.Exercises.Hackonacci
             Symbol = Values[((long)(row * column) * (row * column)) % 7];
         }
 
-        public HackonacciCell(RotatedIndex index) : this(index.Row, index.Column)
+        public HackonacciCell(RotatedCell cell) : this(cell.Row, cell.Column)
         { }
 
         public int Row { get; }
