@@ -11,7 +11,7 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
             FailIfEmpty(letters);
             FailIfNotDistinct(letters);
 
-            this.Letters = letters;
+            Letters = letters;
         }
 
         public char[] Letters { get; }
