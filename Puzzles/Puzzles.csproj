@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="101Hack45\SequenceEquation.cs" />
+    <Compile Include="Exercises\FlattenArray\ArrayItem.cs" />
+    <Compile Include="Exercises\FlattenArray\StackedFlattenedArray.cs" />
+    <Compile Include="Exercises\FlattenArray\RecoursivelyFlattenedArray.cs" />
     <Compile Include="Exercises\Hackonacci\Angle.cs" />
     <Compile Include="Exercises\BitManipulation\XorSequence\XorSequence.cs" />
     <Compile Include="Exercises\DublicatesInArray\ArrayWithDublicates.cs" />
@@ -99,7 +103,9 @@
       <Name>Puzzles.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Exercises\LongNim\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

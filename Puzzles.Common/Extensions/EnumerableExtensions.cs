@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,14 +30,31 @@ namespace Puzzles.Common.Extensions
             }
         }
 
-        public static void ForEach<T>(this IEnumerable<T> items, Action<int> action)
+        public static void ForEach(this IEnumerable items, Action<object> action)
         {
-            var i = 0;
+            foreach (var item in items)
+            {
+                action(item);
+            }
+        }
+
+        public static IEnumerable Reverse(this IEnumerable items)
+        {
+            var itemsList = new ArrayList();
 
             foreach (var item in items)
             {
-                action(i++);
+                itemsList.Add(item);
             }
+
+            var reversed = new object[itemsList.Count];
+
+            for (int i = itemsList.Count - 1, j = 0; i >= 0; i--, j++)
+            {
+                reversed[j] = itemsList[i];
+            }
+
+            return reversed;
         }
 
         public static IDictionary<TKey, TValue> ToDictionary<TItems, TKey, TValue>(this IEnumerable<TItems> items, Func<TItems, int, TKey> key, Func<TItems, int, TValue> value)
