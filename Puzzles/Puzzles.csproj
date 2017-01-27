@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="101Hack45\SequenceEquation.cs" />
+    <Compile Include="Exercises\Arrays\MaximumSum\MaximumSubArraySum.cs" />
+    <Compile Include="Exercises\Arrays\MaximumSum\MaximumSum.cs" />
     <Compile Include="Exercises\FlattenArray\ArrayItem.cs" />
     <Compile Include="Exercises\FlattenArray\StackedFlattenedArray.cs" />
     <Compile Include="Exercises\FlattenArray\RecoursivelyFlattenedArray.cs" />
