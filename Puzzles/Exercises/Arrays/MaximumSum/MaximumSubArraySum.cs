@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Puzzles.Exercises.Arrays.MaximumSum
+﻿namespace Puzzles.Exercises.Arrays.MaximumSum
 {
     public struct MaximumSubArraySum
     {
@@ -15,12 +13,11 @@ namespace Puzzles.Exercises.Arrays.MaximumSum
 
         MaximumSum CalculateMaxSubArraySum()
         {
-            var sum = 0;
+            long sum = 0;
             var possibleStart = 0;
 
-            var maxSum = Int32.MinValue;
-            var start = 0;
-            var end = 0;
+            var maxSum = long.MinValue;
+            int start = 0, end = 0;
 
             for (var i = 0; i < _values.Length; i++)
             {
