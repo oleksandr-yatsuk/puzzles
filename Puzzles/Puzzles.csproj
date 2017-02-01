@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="101Hack45\SequenceEquation.cs" />
+    <Compile Include="Exercises\Arrays\MaximumSumByModule\MaximumSubArraySum.cs" />
+    <Compile Include="Exercises\Arrays\MaximumSumByModule\MaximumValue.cs" />
+    <Compile Include="Exercises\Arrays\MaximumSumByModule\SequentialSumByModuleArray.cs" />
     <Compile Include="Exercises\Arrays\MaximumSum\RecursiveMaximumSubArraySum.cs" />
     <Compile Include="Exercises\Arrays\MaximumSum\MaximumSubArraySum.cs" />
     <Compile Include="Exercises\Arrays\MaximumSum\MaximumSum.cs" />
