@@ -1,26 +1,51 @@
-﻿namespace Puzzles.Exercises.Arrays.MaximumSumByModule
+﻿using System.Linq;
+
+namespace Puzzles.Exercises.Arrays.MaximumSumByModule
 {
     public struct MaximumSubArraySum
     {
-        readonly int[] _numbers;
-        readonly int _module;
+        readonly long[] numbers;
+        readonly long module;
 
-        public MaximumSubArraySum(int[] numbers, int module)
+        public MaximumSubArraySum(long[] numbers, long module)
         {
-            _numbers = numbers;
-            _module = module;
+            this.numbers = numbers;
+            this.module = module;
         }
 
-        public int SubArraySum => CalculateMaxSubArraySum(_numbers, _module);
+        public long SubArraySum => CalculateMaxSubArraySum(numbers, module);
 
-        static int CalculateMaxSubArraySum(int[] numbers, int module)
+        static long CalculateMaxSubArraySum(long[] numbers, long module)
         {
             var sequentialArray = new SequentialSumByModuleArray(numbers, module);
 
             return MaxSubarraySum(sequentialArray);
         }
 
-        static int MaxSubarraySum(SequentialSumByModuleArray sequentialArray)
+        static long MaxSubarraySum(SequentialSumByModuleArray sequentialArray)
+        {
+            var orderedArray = sequentialArray.OrderBy(n => n.Value).ToArray();
+            var max = new MaximumValue();
+
+            for (var i = 0; i < orderedArray.Length - 1; i++)
+            {
+                var current = orderedArray[i];
+                var bigger = orderedArray[i + 1];
+
+                if (bigger.LocatedBefore(current))
+                {
+                    max.SetIfBigger(current.Value - bigger.Value + sequentialArray.Module);
+                }
+
+                max.SetIfBigger(current.Value);
+            }
+
+            max.SetIfBigger(orderedArray.Last().Value);
+
+            return max;
+        }
+
+        static long MaxSubarraySumBruteForce(SequentialSumByModuleArray sequentialArray)
         {
             var max = new MaximumValue(0);
 

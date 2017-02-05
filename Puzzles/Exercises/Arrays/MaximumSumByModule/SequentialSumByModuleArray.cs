@@ -1,35 +1,49 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Puzzles.Exercises.Arrays.MaximumSumByModule
 {
-    public struct SequentialSumByModuleArray
+    public class SequentialSumByModuleArray : IEnumerable<ArrayItem>
     {
-        readonly int[] _numbers;
+        readonly long[] numbers;
 
-        public SequentialSumByModuleArray(IReadOnlyList<int> numbers, int module)
+        public SequentialSumByModuleArray(IReadOnlyList<long> numbers, long module)
         {
             Module = module;
-            _numbers = SumByModule(numbers, module);
+            this.numbers = SumByModule(numbers, module);
         }
 
-        public int this[int i] => _numbers[i];
-        public int Length => _numbers.Length;
-        public int Module { get; }
+        public long this[int i] => numbers[i];
+        public long Length => numbers.LongLength;
+        public long Module { get; }
 
 
-        static int[] SumByModule(IReadOnlyList<int> numbers, int module)
+        static long[] SumByModule(IReadOnlyList<long> numbers, long module)
         {
-            var sumarizedNumbers = new int[numbers.Count];
-            var sum = 0;
+            var summedNumbers = new long[numbers.Count];
+            long sum = 0;
 
             for (var i = 0; i < numbers.Count; i++)
             {
                 sum += numbers[i];
 
-                sumarizedNumbers[i] = sum % module;
+                summedNumbers[i] = sum = sum % module;
             }
 
-            return sumarizedNumbers;
+            return summedNumbers;
+        }
+
+        public IEnumerator<ArrayItem> GetEnumerator()
+        {
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                yield return new ArrayItem(numbers[i], i);
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
