@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Puzzles.Exercises.FlattenArray
+namespace Puzzles.Exercises.Arrays.FlattenArray
 {
     public class RecoursivelyFlattenedArray
     {

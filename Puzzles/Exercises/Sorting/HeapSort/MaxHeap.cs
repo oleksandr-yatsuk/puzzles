@@ -2,11 +2,9 @@
 {
     public class MaxHeap
     {
-        readonly Heap<int> _heap;
-
         public MaxHeap(Heap<int> heap)
         {
-            _heap = heap;
+            Heap = heap;
         }
 
         public void MaxHeapify(int i)
@@ -17,18 +15,19 @@
             {
                 var max = current;
 
-                if (_heap.HasLeft(current) && _heap.Get(max) < _heap.GetLeft(current))
-                    max = _heap.Left(current);
+                if (Heap.HasLeft(current) && Heap.Get(max) < Heap.GetLeft(current))
+                    max = Heap.Left(current);
 
-                if (_heap.HasRight(current) && _heap.Get(max) < _heap.GetRight(current))
-                    max = _heap.GetRight(current);
+                if (Heap.HasRight(current) && Heap.Get(max) < Heap.GetRight(current))
+                    max = Heap.GetRight(current);
 
                 if (max == current) break;
 
-                _heap.Exchange(current, max);
-
+                Heap.Exchange(current, max);
                 current = max;
             }
         }
+
+        public Heap<int> Heap { get; }
     }
 }

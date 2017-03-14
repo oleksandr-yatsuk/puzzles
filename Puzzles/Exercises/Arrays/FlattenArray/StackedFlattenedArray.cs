@@ -2,7 +2,7 @@
 using System.Linq;
 using Puzzles.Common.Extensions;
 
-namespace Puzzles.Exercises.FlattenArray
+namespace Puzzles.Exercises.Arrays.FlattenArray
 {
     public class StackedFlattenedArray
     {

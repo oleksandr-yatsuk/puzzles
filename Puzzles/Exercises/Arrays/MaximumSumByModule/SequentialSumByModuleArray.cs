@@ -21,13 +21,12 @@ namespace Puzzles.Exercises.Arrays.MaximumSumByModule
         static long[] SumByModule(IReadOnlyList<long> numbers, long module)
         {
             var summedNumbers = new long[numbers.Count];
-            long sum = 0;
 
-            for (var i = 0; i < numbers.Count; i++)
+            summedNumbers[0] = numbers[0];
+
+            for (var i = 1; i < numbers.Count; i++)
             {
-                sum += numbers[i];
-
-                summedNumbers[i] = sum = sum % module;
+                summedNumbers[i] = (numbers[i] + summedNumbers[i - 1]) % module;
             }
 
             return summedNumbers;

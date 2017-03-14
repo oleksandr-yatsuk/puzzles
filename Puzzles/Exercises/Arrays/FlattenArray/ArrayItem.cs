@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace Puzzles.Exercises.FlattenArray
+namespace Puzzles.Exercises.Arrays.FlattenArray
 {
     public struct ArrayItem
     {

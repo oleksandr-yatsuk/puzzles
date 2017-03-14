@@ -50,12 +50,12 @@
     <Compile Include="Exercises\Arrays\MaximumSum\RecursiveMaximumSubArraySum.cs" />
     <Compile Include="Exercises\Arrays\MaximumSum\MaximumSubArraySum.cs" />
     <Compile Include="Exercises\Arrays\MaximumSum\MaximumSum.cs" />
-    <Compile Include="Exercises\FlattenArray\ArrayItem.cs" />
-    <Compile Include="Exercises\FlattenArray\StackedFlattenedArray.cs" />
-    <Compile Include="Exercises\FlattenArray\RecoursivelyFlattenedArray.cs" />
+    <Compile Include="Exercises\Arrays\FlattenArray\ArrayItem.cs" />
+    <Compile Include="Exercises\Arrays\FlattenArray\StackedFlattenedArray.cs" />
+    <Compile Include="Exercises\Arrays\FlattenArray\RecoursivelyFlattenedArray.cs" />
     <Compile Include="Exercises\Hackonacci\Angle.cs" />
     <Compile Include="Exercises\BitManipulation\XorSequence\XorSequence.cs" />
-    <Compile Include="Exercises\DublicatesInArray\ArrayWithDublicates.cs" />
+    <Compile Include="Exercises\Arrays\DublicatesInArray\ArrayWithDublicates.cs" />
     <Compile Include="Exercises\Hackonacci\HackonacciMatrix.cs" />
     <Compile Include="Exercises\Hackonacci\RotationDifference.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\Matrix.cs" />

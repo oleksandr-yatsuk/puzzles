@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Puzzles.Exercises.DublicatesInArray
+namespace Puzzles.Exercises.Arrays.DublicatesInArray
 {
     public class ArrayWithDublicates
     {
