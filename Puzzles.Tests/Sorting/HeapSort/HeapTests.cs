@@ -30,5 +30,25 @@ namespace Puzzles.Tests.Sorting.HeapSort
             // ASSERT
             actual.Should().Be(left);
         }
+
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(1, 0)]
+        [InlineData(2, 1)]
+        [InlineData(3, 1)]
+        [InlineData(4, 2)]
+        [InlineData(5, 2)]
+        [InlineData(6, 3)]
+        public void LeafsIndex_GetsTheMinimumIndexAmongAllLeafs(int heapSize, int leafsIndex)
+        {
+            // ARRANGE
+            var heapValues = new int[heapSize];
+
+            // SUT
+            var heap = new Heap<int>(heapValues);
+
+            // ACT & ASSERT
+            heap.LeafsIndex.Should().Be(leafsIndex);
+        }
     }
 }

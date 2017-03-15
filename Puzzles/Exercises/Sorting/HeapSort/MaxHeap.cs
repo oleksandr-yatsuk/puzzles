@@ -7,6 +7,16 @@
             Heap = heap;
         }
 
+        public Heap<int> Heap { get; }
+
+        public void BuildMaxHeap()
+        {
+            for (var i = Heap.LeafsIndex; i >= 0; i--)
+            {
+                MaxHeapify(i);
+            }
+        }
+
         public void MaxHeapify(int i)
         {
             var current = i;
@@ -19,7 +29,7 @@
                     max = Heap.Left(current);
 
                 if (Heap.HasRight(current) && Heap.Get(max) < Heap.GetRight(current))
-                    max = Heap.GetRight(current);
+                    max = Heap.Right(current);
 
                 if (max == current) break;
 
@@ -28,6 +38,17 @@
             }
         }
 
-        public Heap<int> Heap { get; }
+        public void Sort()
+        {
+            for (var size = Heap.Size; size > 0; size--)
+            {
+                BuildMaxHeap();
+
+                Heap.Exchange(0, size - 1);
+                Heap.OverwriteSize(size - 1);
+            }
+
+            Heap.ResetSize();
+        }
     }
 }

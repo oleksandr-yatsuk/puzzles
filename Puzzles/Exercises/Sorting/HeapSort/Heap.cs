@@ -12,13 +12,17 @@ namespace Puzzles.Exercises.Sorting.HeapSort
         public Heap(IEnumerable<T> values)
         {
             this.values.AddRange(values);
+            Size = this.values.Count;
         }
+
+        public int Size { get; private set; }
 
         public int Parent(int i) => ((i + 1) >> 1) - 1;
         public int Left(int i) => ((i + 1) << 1) - 1;
         public int Right(int i) => (i + 1) << 1;
 
-        public int Size => values.Count;
+        public bool IsEmpty => Size == 0;
+        public int LeafsIndex => Size >> 1;
 
         public T Get(int i) => values[i];
         public T GetParent(int i) => values[Parent(i)];
@@ -38,6 +42,9 @@ namespace Puzzles.Exercises.Sorting.HeapSort
             values[i] = values[j];
             values[j] = temp;
         }
+
+        public void OverwriteSize(int simulatedSize) => Size = simulatedSize;
+        public void ResetSize() => Size = values.Count;
 
         public bool Equals(Heap<T> other)
         {
