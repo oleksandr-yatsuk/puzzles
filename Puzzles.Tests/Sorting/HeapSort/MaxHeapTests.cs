@@ -77,10 +77,7 @@ namespace Puzzles.Tests.Sorting.HeapSort
             // ARRANGE
             var heapValues = new[]
             {
-                4,
-                1, 3,
-                2, 16, 9, 10,
-                14, 8, 7
+                10, 9, 8, 7, 6, 5, 4, 3, 2, 1
             };
 
             var expectedHeapValues = heapValues.OrderBy(v => v);
@@ -94,6 +91,22 @@ namespace Puzzles.Tests.Sorting.HeapSort
 
             // ASSERT
             maxHeap.Heap.Equals(expectedHeap).Should().BeTrue();
+        }
+
+        [Fact]
+        public void Sort_KeepsOriginalSizeOfTheHeap()
+        {
+            // ARRANGE
+            var heapValues = new[] { 4, 1, 3 };
+
+            // SUT
+            var maxHeap = new MaxHeap(new Heap<int>(heapValues));
+
+            // ACT
+            maxHeap.Sort();
+
+            // ASSERT
+            maxHeap.HeapSize.Should().Be(heapValues.Length);
         }
     }
 }

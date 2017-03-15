@@ -8,6 +8,7 @@
         }
 
         public Heap<int> Heap { get; }
+        public int HeapSize => Heap.Size;
 
         public void BuildMaxHeap()
         {
@@ -40,7 +41,7 @@
 
         public void Sort()
         {
-            for (var size = Heap.Size; size > 0; size--)
+            for (var size = Heap.Size; size > 1; size--)
             {
                 BuildMaxHeap();
 
