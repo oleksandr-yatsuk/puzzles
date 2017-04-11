@@ -10,17 +10,17 @@ namespace Puzzles
         {
             var n1 = new[]
             {
-                1, 3, 5, 7
+                7, 5, 3, 1
             };
 
             var n2 = new[]
             {
-                0, 2, 4, 6
+                6, 4, 2, 0, -10
             };
 
             var n3 = new[]
             {
-                -1
+                -1, -5
             };
 
             var merged = new MergedSortedArray(n1, n3, n2);

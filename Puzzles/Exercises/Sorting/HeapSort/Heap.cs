@@ -34,7 +34,7 @@ namespace Puzzles.Exercises.Sorting.HeapSort
         public T GetLeft(int i) => values[Left(i)];
         public T GetRight(int i) => values[Right(i)];
 
-        public void Set(int i, T value) => values.Insert(i, value);
+        public void Set(int i, T value) => values[i] = value;
 
         public bool HasLeft(int i) => Left(i) < Size;
         public bool HasRight(int i) => Right(i) < Size;

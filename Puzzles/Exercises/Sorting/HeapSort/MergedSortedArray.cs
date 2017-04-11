@@ -44,7 +44,7 @@ namespace Puzzles.Exercises.Sorting.HeapSort
                     priorityHeap.Insert(new HeapValue<SortedArrayElement>(max.Value.Pop, max.Value));
                 }
             }
-            while (priorityHeap.IsEmpty);
+            while (!priorityHeap.IsEmpty);
         }
     }
 }
