@@ -1,5 +1,6 @@
 ﻿using System;
 using Puzzles.Exercises.Arrays.MaximumSum;
+using Puzzles.Exercises.Sorting.HeapSort;
 
 namespace Puzzles
 {
@@ -7,15 +8,26 @@ namespace Puzzles
     {
         public static void Main()
         {
-            var numbers = new[]
+            var n1 = new[]
             {
-                1, -2, 7, -5, -1, 7
+                1, 3, 5, 7
             };
 
+            var n2 = new[]
+            {
+                0, 2, 4, 6
+            };
 
-            Console.WriteLine(new MaximumSubArraySum(numbers).Sum.ToString());
-            Console.WriteLine(new RecursiveMaximumSubArraySum(numbers).Sum.ToString());
+            var n3 = new[]
+            {
+                -1
+            };
 
+            var merged = new MergedSortedArray(n1, n3, n2);
+
+            var mergedArray = string.Join(", ", merged.MergedArray);
+
+            Console.WriteLine(mergedArray);
             Console.ReadKey();
         }
     }

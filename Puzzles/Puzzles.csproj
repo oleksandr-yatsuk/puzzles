@@ -93,7 +93,12 @@
     <Compile Include="Exercises\Hackonacci\HackonacciCell.cs" />
     <Compile Include="Exercises\Hackonacci\HackonacciNumber.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\Heap.cs" />
+    <Compile Include="Exercises\Sorting\HeapSort\HeapValue.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\MaxHeap.cs" />
+    <Compile Include="Exercises\Sorting\HeapSort\MaxHeapGeneric.cs" />
+    <Compile Include="Exercises\Sorting\HeapSort\MaxPriorityHeap.cs" />
+    <Compile Include="Exercises\Sorting\HeapSort\MergedSortedArray.cs" />
+    <Compile Include="Exercises\Sorting\HeapSort\SortedArrayElement.cs" />
     <Compile Include="Exercises\ZeroNim\Game.cs" />
     <Compile Include="Exercises\ZeroNim\GrundyNumber.cs" />
     <Compile Include="Program.cs" />

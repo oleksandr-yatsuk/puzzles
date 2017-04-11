@@ -9,13 +9,18 @@ namespace Puzzles.Exercises.Sorting.HeapSort
     {
         readonly List<T> values = new List<T>();
 
-        public Heap(IEnumerable<T> values)
+        public Heap(IEnumerable<T> values) : this()
         {
             this.values.AddRange(values);
-            Size = this.values.Count;
+        }
+
+        public Heap()
+        {
+            ResetSize();
         }
 
         public int Size { get; private set; }
+        public int LastIndex => Size - 1;
 
         public int Parent(int i) => ((i + 1) >> 1) - 1;
         public int Left(int i) => ((i + 1) << 1) - 1;
@@ -28,6 +33,8 @@ namespace Puzzles.Exercises.Sorting.HeapSort
         public T GetParent(int i) => values[Parent(i)];
         public T GetLeft(int i) => values[Left(i)];
         public T GetRight(int i) => values[Right(i)];
+
+        public void Set(int i, T value) => values.Insert(i, value);
 
         public bool HasLeft(int i) => Left(i) < Size;
         public bool HasRight(int i) => Right(i) < Size;
@@ -44,7 +51,13 @@ namespace Puzzles.Exercises.Sorting.HeapSort
         }
 
         public void OverwriteSize(int simulatedSize) => Size = simulatedSize;
-        public void ResetSize() => Size = values.Count;
+        public void ResetSize() => OverwriteSize(values.Count);
+
+        public void Append(T element)
+        {
+            values.Add(element);
+            ResetSize();
+        }
 
         public bool Equals(Heap<T> other)
         {
@@ -67,6 +80,12 @@ namespace Puzzles.Exercises.Sorting.HeapSort
         public IEnumerator<T> GetEnumerator()
         {
             return values.GetEnumerator();
+        }
+
+        public void RemoveLast()
+        {
+            values.RemoveAt(LastIndex);
+            Size--;
         }
     }
 }
