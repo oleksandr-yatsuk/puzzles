@@ -12,7 +12,7 @@ namespace Puzzles.Tests.Sorting.HeapSort
         [Theory]
         [InlineData(new [] {10, 5, 1}, new[] {1, -5, -10}, new[] {100, 77, 52})]
         [InlineData(new [] {10, 5, 1})]
-        [InlineData(new [] {0})]
+        [InlineData(new [] {1, 1, 1, -1})]
         public void ElementsAreSortedInDecreasingOrder(params int[][] arrays)
         {
             // SUT
@@ -23,6 +23,22 @@ namespace Puzzles.Tests.Sorting.HeapSort
 
             // ASSERT
             actual.Should().BeInDescendingOrder();
+        }
+
+        [Theory]
+        [InlineData(new [] {10, 5, 1}, new[] {1, 2, 1})]
+        [InlineData(new [] {4, 5, 1})]
+        public void ElementsAreNotSortedIfArraysAreNot(params int[][] arrays)
+        {
+            // SUT
+            var mergedArray = new MergedSortedArray(arrays);
+
+            // ACT
+            var actual = mergedArray.MergedArray;
+
+            // ASSERT
+            actual.Should().NotBeDescendingInOrder();
+            actual.Should().NotBeAscendingInOrder();
         }
     }
 }
