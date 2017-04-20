@@ -73,6 +73,7 @@
     <Compile Include="Sorting\HeapSort\HeapTests.cs" />
     <Compile Include="Sorting\HeapSort\MaxHeapTests.cs" />
     <Compile Include="Sorting\HeapSort\MergedSortedArrayTests.cs" />
+    <Compile Include="Sorting\QuickSort\SortedArrayTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

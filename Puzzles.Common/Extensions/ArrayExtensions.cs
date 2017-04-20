@@ -6,5 +6,13 @@
         {
             return (T[]) array?.Clone();
         }
+
+        public static void Exchange<T>(this T[] array, int i, int j)
+        {
+            var toJ = array[i];
+
+            array[i] = array[j];
+            array[j] = toJ;
+        }
     }
 }
