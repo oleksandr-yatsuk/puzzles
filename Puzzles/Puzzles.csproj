@@ -99,9 +99,11 @@
     <Compile Include="Exercises\Sorting\HeapSort\MaxPriorityHeap.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\MergedSortedArray.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\SortedArrayElement.cs" />
+    <Compile Include="Exercises\Sorting\InsertionSort\SortedArray.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\Partition.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\Range.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\SortedArray.cs" />
+    <Compile Include="Exercises\Strings\DreamPlayGame.cs" />
     <Compile Include="Exercises\ZeroNim\Game.cs" />
     <Compile Include="Exercises\ZeroNim\GrundyNumber.cs" />
     <Compile Include="Program.cs" />

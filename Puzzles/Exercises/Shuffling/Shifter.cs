@@ -15,7 +15,7 @@
             }
         }
 
-        public int[] ShiftRightBruteforce(int[] numbers, int shiftDistance)
+        public int[] ShiftRightBruteForce(int[] numbers, int shiftDistance)
         {
             var shift = shiftDistance % numbers.Length;
             var length = numbers.Length;
