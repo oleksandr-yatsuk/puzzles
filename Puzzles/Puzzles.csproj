@@ -104,7 +104,10 @@
     <Compile Include="Exercises\Sorting\QuickSort\Range.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\SortedArray.cs" />
     <Compile Include="Exercises\Strings\DreamPlayGame.cs" />
-    <Compile Include="Exercises\Strings\ModularExponent.cs" />
+    <Compile Include="Exercises\Strings\PerfectSubsequences\DegreeValue.cs" />
+    <Compile Include="Exercises\Strings\PerfectSubsequences\FactorialsSet.cs" />
+    <Compile Include="Exercises\Strings\PerfectSubsequences\Game.cs" />
+    <Compile Include="Exercises\Strings\PerfectSubsequences\InverseFactorialsSet.cs" />
     <Compile Include="Exercises\ZeroNim\Game.cs" />
     <Compile Include="Exercises\ZeroNim\GrundyNumber.cs" />
     <Compile Include="Program.cs" />
