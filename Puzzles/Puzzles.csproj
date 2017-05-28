@@ -92,6 +92,7 @@
     <Compile Include="Exercises\Probability\Palindromes\ExpectedValue\ExpectedValueResolver.cs" />
     <Compile Include="Exercises\Hackonacci\HackonacciCell.cs" />
     <Compile Include="Exercises\Hackonacci\HackonacciNumber.cs" />
+    <Compile Include="Exercises\Sorting\CountingSort\SortedArray.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\Heap.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\HeapValue.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\MaxHeap.cs" />
