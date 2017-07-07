@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Puzzles.Common.Extensions;
 
 namespace Puzzles.Exercises.Sorting.QuickSort
 {
     public class SortedArray
     {
+        static readonly Random Random = new Random(DateTime.UtcNow.Millisecond ^ Guid.NewGuid().GetHashCode() ^ 111111117);
         readonly int[] _values;
 
         public SortedArray(int[] values)
@@ -47,11 +49,20 @@ namespace Puzzles.Exercises.Sorting.QuickSort
         {
             if (start < end)
             {
-                var partition = Partition(values, start, end);
+                var partition = RandomizedPartition(values, start, end);
 
                 RecursiveQuickSort(values, start, partition - 1);
                 RecursiveQuickSort(values, partition + 1, end);
             }
+        }
+
+        static int RandomizedPartition(int[] values, int start, int end)
+        {
+            var pivotIndex = Random.Next(start, end);
+
+            values.Exchange(pivotIndex, end);
+
+            return Partition(values, start, end);
         }
 
         static int Partition(int[] values, int start, int end)

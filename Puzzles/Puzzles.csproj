@@ -101,6 +101,7 @@
     <Compile Include="Exercises\Sorting\HeapSort\MergedSortedArray.cs" />
     <Compile Include="Exercises\Sorting\HeapSort\SortedArrayElement.cs" />
     <Compile Include="Exercises\Sorting\InsertionSort\SortedArray.cs" />
+    <Compile Include="Exercises\Sorting\MergeSort\SortedArray.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\Partition.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\Range.cs" />
     <Compile Include="Exercises\Sorting\QuickSort\SortedArray.cs" />
@@ -127,9 +128,7 @@
       <Name>Puzzles.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exercises\LongNim\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

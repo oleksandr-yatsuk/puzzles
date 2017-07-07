@@ -19,6 +19,7 @@ namespace Puzzles.Tests.Sorting.InsertionSort
             var sortedNumbers = array.DescendingNumbers;
 
             // ASSERT
+            sortedNumbers.Should().Contain(numbers);
             sortedNumbers.Should().BeInDescendingOrder();
         }
 
@@ -35,6 +36,7 @@ namespace Puzzles.Tests.Sorting.InsertionSort
             var sortedNumbers = array.Numbers;
 
             // ASSERT
+            sortedNumbers.Should().Contain(numbers);
             sortedNumbers.Should().BeInAscendingOrder();
         }
     }

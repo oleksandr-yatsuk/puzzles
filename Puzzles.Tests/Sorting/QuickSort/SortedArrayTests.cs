@@ -10,6 +10,7 @@ namespace Puzzles.Tests.Sorting.QuickSort
         [InlineData(new[] { 1, 2, 3, 4, 5 })]
         [InlineData(new[] { 2, 3, 4, 1, 5 })]
         [InlineData(new[] { 2, 33, 14, 11, 25 })]
+        [InlineData(new[] { 1, 2, 3, 4, 4, 4, 3, 2, 1 })]
         [InlineData(new[] { 5, 4, 3, 2, 1 })]
         public void ArrayOfNumbersGetsRecursivelySorted(int[] numbers)
         {
@@ -20,6 +21,7 @@ namespace Puzzles.Tests.Sorting.QuickSort
             var sortedNumbers = array.RecursivelySorted;
 
             // ASSERT
+            sortedNumbers.Should().Contain(numbers);
             sortedNumbers.Should().BeInDescendingOrder();
         }
 
@@ -28,6 +30,7 @@ namespace Puzzles.Tests.Sorting.QuickSort
         [InlineData(new[] { 2, 3, 4, 1, 5 })]
         [InlineData(new[] { 2, 33, 14, 11, 25 })]
         [InlineData(new[] { 5, 4, 3, 2, 1 })]
+        [InlineData(new[] { 1, 2, 3, 4, 4, 4, 3, 2, 1 })]
         public void ArrayOfNumbersGetsSorted(int[] numbers)
         {
             // SUT
@@ -37,6 +40,7 @@ namespace Puzzles.Tests.Sorting.QuickSort
             var sortedNumbers = array.Sorted;
 
             // ASSERT
+            sortedNumbers.Should().Contain(numbers);
             sortedNumbers.Should().BeInDescendingOrder();
         }
     }

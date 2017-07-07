@@ -75,6 +75,7 @@
     <Compile Include="Sorting\HeapSort\MaxHeapTests.cs" />
     <Compile Include="Sorting\HeapSort\MergedSortedArrayTests.cs" />
     <Compile Include="Sorting\InsertionSort\SortedArrayTests.cs" />
+    <Compile Include="Sorting\MergeSort\MergeSrotedArrayTests.cs" />
     <Compile Include="Sorting\QuickSort\SortedArrayTests.cs" />
     <Compile Include="Strings\PerfectSubsequences\DegreeValueTests.cs" />
   </ItemGroup>
