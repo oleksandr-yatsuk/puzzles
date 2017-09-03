@@ -13,7 +13,12 @@ namespace Puzzles.Exercises.Sorting.InsertionSort
 
         public int[] DescendingNumbers => RunInsertionDescendSort(_array.Copy());
 
-        public int[] Numbers => RunInsertionSort(_array.Copy());
+        public int[] Numbers => RunInsertionSort(_array.Copy(), 0, _array.Length - 1);
+
+        public void SortInPlace(int start, int end)
+        {
+            RunInsertionSort(_array, start, end);
+        }
 
         static int[] RunInsertionDescendSort(int[] array)
         {
@@ -36,14 +41,14 @@ namespace Puzzles.Exercises.Sorting.InsertionSort
             return array;
         }
 
-        static int[] RunInsertionSort(int[] array)
+        static int[] RunInsertionSort(int[] array, int start, int end)
         {
-            for (var i = 1; i < array.Length; i++)
+            for (var i = start + 1; i <= end; i++)
             {
                 var j = i - 1;
                 var key = array[i];
 
-                while (j >= 0 && array[j] > key)
+                while (j >= start && array[j] > key)
                 {
                     array[j + 1] = array[j];
                     j--;

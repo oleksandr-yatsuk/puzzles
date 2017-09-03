@@ -78,6 +78,7 @@
     <Compile Include="Sorting\MergeSort\MergeSrotedArrayTests.cs" />
     <Compile Include="Sorting\QuickSort\SortedArrayTests.cs" />
     <Compile Include="Strings\PerfectSubsequences\DegreeValueTests.cs" />
+    <Compile Include="Trees\BinaryTrees\BinaryTreeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

@@ -11,5 +11,13 @@ namespace Puzzles.Common.Extensions
                 stack.Push(item);
             }
         }
+
+        public static void PushIfNotNull<T>(this Stack<T> stack, T item)
+        {
+            if (item != null)
+            {
+                stack.Push(item);
+            }
+        }
     }
 }

@@ -11,16 +11,25 @@ namespace Puzzles.Exercises.Sorting.MergeSort
             this.array = array;
         }
 
-        public int[] SortedTopDown => SortTopDown(array);
+        public int[] SortedTopDown => SortTopDown(array.Copy());
+        public int[] SortedBottomUp => SortBottomUp(array.Copy());
 
         static int[] SortTopDown(int[] array)
         {
-            var original = array.Copy();
             var working = array.Copy();
 
-            SortTopDownRecursively(original, working, 0, original.Length - 1);
+            SortTopDownRecursively(array, working, 0, array.Length - 1);
 
-            return original;
+            return array;
+        }
+
+        static int[] SortBottomUp(int[] array)
+        {
+            for (var size = 2; size < array.Length; size = size << 1)
+            {
+            }
+
+            return array;
         }
 
         static void SortTopDownRecursively(int[] destination, int[] working, int start, int end)
