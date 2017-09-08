@@ -111,6 +111,8 @@
     <Compile Include="Exercises\Strings\PerfectSubsequences\FactorialsSet.cs" />
     <Compile Include="Exercises\Strings\PerfectSubsequences\Game.cs" />
     <Compile Include="Exercises\Strings\PerfectSubsequences\InverseFactorialsSet.cs" />
+    <Compile Include="Exercises\Trees\BinaryTrees\WithParents\BinaryTree.cs" />
+    <Compile Include="Exercises\Trees\BinaryTrees\WithParents\NodeWithParent.cs" />
     <Compile Include="Exercises\ZeroNim\Game.cs" />
     <Compile Include="Exercises\ZeroNim\GrundyNumber.cs" />
     <Compile Include="Exercises\Trees\BinaryTrees\Node.cs" />
