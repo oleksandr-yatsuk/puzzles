@@ -25,29 +25,17 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
 
         public T this[int row, int column]
         {
-            get { return matrix[row][column]; }
-            set { matrix[row][column] = value; }
+            get => matrix[row][column];
+            set => matrix[row][column] = value;
         }
 
-        public T LastInRow(int row)
-        {
-            return this[row, Columns - 1];
-        }
+        public T LastInRow(int row) => this[row, Columns - 1];
 
-        public void SetLastInRow(T value, int row)
-        {
-            this[row, Columns - 1] = value;
-        }
+        public void SetLastInRow(T value, int row) => this[row, Columns - 1] = value;
 
-        public T OnDiagonal(int row)
-        {
-            return this[row, row];
-        }
+        public T OnDiagonal(int row) => this[row, row];
 
-        public void SetOnDiagonal(T value, int row)
-        {
-            this[row, row] = value;
-        }
+        public void SetOnDiagonal(T value, int row) => this[row, row] = value;
 
         public Matrix<T> Copy()
         {

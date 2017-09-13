@@ -25,13 +25,27 @@
         public NodeWithParent<T> Left { get; }
         public NodeWithParent<T> Right { get; }
 
+        public NodeWithParent<T> LeftMost
+        {
+            get
+            {
+                var current = this;
+
+                while (current.Left != null)
+                    current = current.Left;
+
+                return current;
+            }
+        }
+
         public T Data { get; }
 
         public bool IsRoot => Parent == null;
+        public bool IsLeaf => Left == null && Right == null;
 
-        public bool IsLeftChildOfParent => !IsRoot && this == Parent.Left;
-        public bool IsRightChildOfParent => !IsRoot && this == Parent.Right;
+        public bool IsLeftChild => !IsRoot && this == Parent.Left;
+        public bool IsRightChild => !IsRoot && this == Parent.Right;
 
-        public bool HasRightSibling => !IsRoot && Parent.Right != null;
+        public bool HasRightSibling => !IsRightChild && Parent.Right != null;
     }
 }

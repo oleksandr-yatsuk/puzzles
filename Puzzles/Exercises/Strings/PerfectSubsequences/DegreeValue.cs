@@ -11,17 +11,17 @@
 
         static long CalculateValue(long number, long degree, long modulus)
         {
-            var previous = number % modulus;
+            var current = number % modulus;
             long result = 1;
 
             for (var i = 0; i < 64; i++)
             {
                 if ((degree & ((long)1 << i)) != 0)
                 {
-                    result = result * previous % modulus;
+                    result = result * current % modulus;
                 }
 
-                previous = previous * previous % modulus;
+                current = current * current % modulus;
             }
 
             return result;

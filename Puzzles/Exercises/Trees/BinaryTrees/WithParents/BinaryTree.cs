@@ -12,6 +12,8 @@ namespace Puzzles.Exercises.Trees.BinaryTrees.WithParents
 
         public NodeWithParent<T> Root { get; }
 
+        public T[] TraverseInOrder() => TraverseInOrder(Root).ToArray();
+
         public T[] TraversePreOrder() => TraversePreOrder(Root).ToArray();
 
         static IEnumerable<T> TraversePreOrder(NodeWithParent<T> root)
@@ -36,7 +38,7 @@ namespace Puzzles.Exercises.Trees.BinaryTrees.WithParents
 
                 while (current != null)
                 {
-                    if (current.IsLeftChildOfParent && current.HasRightSibling)
+                    if (current.IsLeftChild && current.HasRightSibling)
                     {
                         current = current.Parent.Right;
                     }
@@ -45,6 +47,36 @@ namespace Puzzles.Exercises.Trees.BinaryTrees.WithParents
                         current = current.Parent;
                     }
                 }
+            }
+        }
+
+        static IEnumerable<T> TraverseInOrder(NodeWithParent<T> root)
+        {
+            var current = root.LeftMost;
+
+            while (current != null)
+            {
+                yield return current.Data;
+
+                if (current.IsLeaf && current.IsLeftChild)
+                {
+                    current = current.Parent;
+                    continue;
+                }
+
+                if (current.Right != null)
+                {
+                    current = current.Right.LeftMost;
+                    continue;
+                }
+
+                NodeWithParent<T> prev;
+
+                do
+                {
+                    prev = current;
+                    current = current.Parent;
+                } while (current != null && current.Right == prev);
             }
         }
     }

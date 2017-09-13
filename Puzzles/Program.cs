@@ -47,7 +47,7 @@ namespace Puzzles
 
             var tree = new Exercises.Trees.BinaryTrees.BinaryTree<int>(root);
 
-            tree.TraversePreOrder().ForEach(n => Console.Write(n + " "));
+            tree.TraverseInOrder().ForEach(n => Console.Write(n + " "));
 
             Console.WriteLine();
 
@@ -85,7 +85,7 @@ namespace Puzzles
 
             //Console.WriteLine();
 
-            tree2.TraversePreOrder().ForEach(n => Console.Write(n + " "));
+            tree2.TraverseInOrder().ForEach(n => Console.Write(n + " "));
 
             //Console.WriteLine();
 
