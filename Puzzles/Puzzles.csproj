@@ -59,6 +59,8 @@
     <Compile Include="Exercises\Arrays\DublicatesInArray\ArrayWithDublicates.cs" />
     <Compile Include="Exercises\Hackonacci\HackonacciMatrix.cs" />
     <Compile Include="Exercises\Hackonacci\RotationDifference.cs" />
+    <Compile Include="Exercises\Knapsack\Backpack.cs" />
+    <Compile Include="Exercises\Knapsack\Item.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\Matrix.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\MatrixCellCoordinates.cs" />
     <Compile Include="Exercises\MatrixLayerRotation\MatrixLayerArray.cs" />

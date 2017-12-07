@@ -1,4 +1,6 @@
-﻿namespace Puzzles.Common.Extensions
+﻿using System.Linq;
+
+namespace Puzzles.Common.Extensions
 {
     public static class ArrayExtensions
     {
@@ -13,6 +15,11 @@
 
             array[i] = array[j];
             array[j] = toJ;
+        }
+
+        public static T[] Concat<T>(this T[] array, params T[] items)
+        {
+            return Enumerable.Concat(array, items).ToArray();
         }
     }
 }

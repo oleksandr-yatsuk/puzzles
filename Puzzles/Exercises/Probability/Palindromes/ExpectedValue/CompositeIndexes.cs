@@ -26,7 +26,7 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
                 for (var i = 0;;i++)
                 {
                     if (i == length) yield break;
-                    if (++indexes[i] < upperBound) break;
+                    if (++indexes[i] <= upperBound) break;
 
                     indexes[i] = 0;
                 }

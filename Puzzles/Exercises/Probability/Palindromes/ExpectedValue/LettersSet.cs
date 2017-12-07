@@ -14,7 +14,7 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
 
         public IEnumerable<char[]> GetPermutations(int length)
         {
-            var indexes = new CompositeIndexes(letters.Length, length);
+            var indexes = new CompositeIndexes(letters.Length - 1, length);
 
             foreach (var index in indexes)
             {

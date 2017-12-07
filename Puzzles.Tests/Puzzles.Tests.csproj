@@ -69,6 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompositeIndexes\CompositeIndexesTests.cs" />
+    <Compile Include="Knapsack\CachedKnapsackTests.cs" />
+    <Compile Include="Knapsack\RecursiveAndBruteforceKnapsackTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting\CountingSort\SortedArrayTests.cs" />
     <Compile Include="Sorting\HeapSort\HeapTests.cs" />
