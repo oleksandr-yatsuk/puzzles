@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using Puzzles.Common.Extensions;
 using Puzzles.Exercises.Probability.Palindromes.ExpectedValue;
 
@@ -27,7 +28,7 @@ namespace Puzzles.Exercises.Knapsack
             return GetMaximumValueRecursively(items, capacity, n);
         }
 
-        public int GetMaximumValueBruteforce(Item[] items)
+        public int GetMaximumValueBruteForce(Item[] items)
         {
             var n = items.Length;
             var indexes = new CompositeIndexes(1, n);
@@ -37,7 +38,7 @@ namespace Puzzles.Exercises.Knapsack
             foreach (var index in indexes)
             {
                 var current = items.Where((item, i) => index[i] == 1).ToArray();
-                var weight = current.Sum(item => item.Weigh);
+                var weight = current.Sum(item => item.Weight);
 
                 if (weight > Capacity) continue;
 
@@ -50,6 +51,36 @@ namespace Puzzles.Exercises.Knapsack
             return result;
         }
 
+        public int GetMaximumValue(Item[] items)
+        {
+            var decisionsMatrix = new Matrix<int>(items.Length, Capacity + 1, -1);
+
+            return CalculateMaximumValue(items, items.Length - 1, Capacity, decisionsMatrix);
+        }
+
+        static int CalculateMaximumValue(Item[] items, int current, int capacity, Matrix<int> decisionsMatrix)
+        {
+            if (capacity <= 0 || current < 0)
+                return 0;
+
+            if (decisionsMatrix[current, capacity] >= 0)
+                return decisionsMatrix[current, capacity];
+
+            var sameCapacityValue = CalculateMaximumValue(items, current - 1, capacity, decisionsMatrix);
+            var currentItem = items[current];
+
+            if (currentItem.Weight > capacity)
+                return sameCapacityValue;
+
+            var prevItemValue = CalculateMaximumValue(items, current - 1, capacity - currentItem.Weight, decisionsMatrix) + currentItem.Value;
+
+            var maxValue = Math.Max(sameCapacityValue, prevItemValue);
+
+            decisionsMatrix[current, capacity] = maxValue;
+
+            return maxValue;
+        }
+
         static int GetMaximumValueRecursively(Item[] items, int capacity, int n)
         {
             if (capacity <= 0 || n < 0)
@@ -58,10 +89,10 @@ namespace Puzzles.Exercises.Knapsack
             var sameCapacityValue = GetMaximumValueRecursively(items, capacity, n - 1);
             var current = items[n];
 
-            if (capacity < current.Weigh)
+            if (capacity < current.Weight)
                 return sameCapacityValue;
 
-            var currentCapacityValue = GetMaximumValueRecursively(items, capacity - current.Weigh, n - 1) + current.Value;
+            var currentCapacityValue = GetMaximumValueRecursively(items, capacity - current.Weight, n - 1) + current.Value;
             var value = Math.Max(sameCapacityValue, currentCapacityValue);
 
             return value;
@@ -74,9 +105,9 @@ namespace Puzzles.Exercises.Knapsack
             var sameCapacityItems = GetMaxValuableItemsRecursively(items, capacity, n - 1);
             var current = items[n];
 
-            if (capacity < current.Weigh) return sameCapacityItems;
+            if (capacity < current.Weight) return sameCapacityItems;
 
-            var currentCapacityItems = GetMaxValuableItemsRecursively(items, capacity - current.Weigh, n - 1);
+            var currentCapacityItems = GetMaxValuableItemsRecursively(items, capacity - current.Weight, n - 1);
 
             var sameCapacityValue = sameCapacityItems.Sum(item => item.Value);
             var currentCapacityValue = currentCapacityItems.Sum(item => item.Value) + current.Value;

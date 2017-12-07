@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="101Hack45\SequenceEquation.cs" />
     <Compile Include="Exercises\Trees\BinaryTrees\BinaryTree.cs" />
     <Compile Include="Exercises\Arrays\MaximumSumByModule\ArrayItem.cs" />
     <Compile Include="Exercises\Arrays\MaximumSumByModule\MaximumSubArraySum.cs" />

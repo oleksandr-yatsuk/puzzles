@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Puzzles.Tests.Knapsack
 {
-    public class RecursiveAndBruteforceKnapsackTests
+    public class RecursiveAndBruteForceKnapsackTests
     {
         [Theory]
         [InlineData(new []{1}, new []{1}, 1, 1)]
@@ -32,7 +32,7 @@ namespace Puzzles.Tests.Knapsack
         [InlineData(new []{3, 2, 3, 5, 2}, new []{1, 4, 4, 3, 1}, 10, 13)]
         [InlineData(new []{3, 3}, new []{1, 1}, 1, 3)]
         [InlineData(new []{3, 3}, new []{1, 1}, 0, 0)]
-        public void GetMaximumValueBruteforce_CalculatesMaximumValueForCapacity(int[] values, int[] weights, int capacity, int expectedValue)
+        public void GetMaximumValueBruteForce_CalculatesMaximumValueForCapacity(int[] values, int[] weights, int capacity, int expectedValue)
         {
             // ARRANGE
             var items = values.Select((value, i) => new Item(value, weights[i])).ToArray();
@@ -41,7 +41,7 @@ namespace Puzzles.Tests.Knapsack
             var backpack = new Backpack(capacity);
 
             // ACT
-            var actualValue = backpack.GetMaximumValueBruteforce(items);
+            var actualValue = backpack.GetMaximumValueBruteForce(items);
 
             // ASSERT
             actualValue.Should().Be(expectedValue);

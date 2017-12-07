@@ -5,14 +5,17 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
 {
     public class Matrix<T>
     {
-        readonly T[][] matrix;
+        readonly T[][] _matrix;
 
-        public Matrix(int rows, int columns) : this(InitMatrix(rows, columns))
+        public Matrix(int rows, int columns, T defaultValue) : this(InitMatrix(rows, columns, defaultValue))
+        { }
+
+        public Matrix(int rows, int columns) : this(rows, columns, default(T))
         { }
 
         public Matrix(T[][] matrix)
         {
-            this.matrix = matrix;
+            _matrix = matrix;
 
             Rows = matrix.Length;
             Columns = matrix[0]?.Length ?? 0;
@@ -25,8 +28,8 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
 
         public T this[int row, int column]
         {
-            get => matrix[row][column];
-            set => matrix[row][column] = value;
+            get => _matrix[row][column];
+            set => _matrix[row][column] = value;
         }
 
         public T LastInRow(int row) => this[row, Columns - 1];
@@ -50,16 +53,21 @@ namespace Puzzles.Exercises.Probability.Palindromes.ExpectedValue
 
         public override string ToString()
         {
-            return string.Join(Environment.NewLine, matrix.Select(row => string.Join(" ", row)));
+            return string.Join(Environment.NewLine, _matrix.Select(row => string.Join(" ", row)));
         }
 
-        static T[][] InitMatrix(int rows, int columns)
+        static T[][] InitMatrix(int rows, int columns, T defaultValue)
         {
             var matrix = new T[rows][];
 
             for (var i = 0; i < rows; i++)
             {
                 matrix[i] = new T[columns];
+
+                for (var j = 0; j < columns; j++)
+                {
+                    matrix[i][j] = defaultValue;
+                }
             }
 
             return matrix;

@@ -2,13 +2,13 @@
 {
     public struct Item
     {
-        public Item(int value, int weigh)
+        public Item(int value, int weight)
         {
             Value = value;
-            Weigh = weigh;
+            Weight = weight;
         }
 
         public int Value { get; }
-        public int Weigh { get; }
+        public int Weight { get; }
     }
 }
